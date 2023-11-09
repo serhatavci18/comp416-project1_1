@@ -1,6 +1,7 @@
 import java.io.*;
 import java.net.Socket;
 import java.util.Scanner;
+
 import org.json.JSONObject;
 import org.json.JSONArray;
 
@@ -58,7 +59,8 @@ public class Client {
                             }
                             System.out.println();
                         }
-                    } if ("NFTDetailsResponse".equals(responseType)) {
+                    }
+                    if ("NFTDetailsResponse".equals(responseType)) {
                         JSONObject data = jsonResponse.getJSONObject("data");
                         System.out.println("Received from server:");
                         System.out.println("Name: " + data.getString("name"));

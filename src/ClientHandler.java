@@ -1,9 +1,11 @@
 import java.io.*;
 import java.net.HttpURLConnection;
 import java.net.URL;
+
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.json.JSONException;
+
 import java.net.Socket;
 
 public class ClientHandler implements Runnable {
@@ -83,6 +85,7 @@ public class ClientHandler implements Runnable {
             throw new IOException("Failed to fetch NFT list. HTTP response code: " + responseCode);
         }
     }
+
     private JSONObject fetchNFTDetailsData(String nftId) throws IOException, JSONException {
         String apiUrl = "https://api.coingecko.com/api/v3/nfts/" + nftId;
 
