@@ -4,7 +4,7 @@ import java.net.Socket;
 
 public class Server {
     private ServerSocket serverSocket;
-    private final int port = 99999;
+    private final int port = 12345;
 
     public Server() {
         try {
@@ -19,7 +19,6 @@ public class Server {
         while (true) {
             try {
                 Socket clientSocket = serverSocket.accept();
-                // Create a new thread to handle the client using the ClientHandler class
                 Thread clientThread = new Thread(new ClientHandler(clientSocket));
                 clientThread.start();
             } catch (IOException e) {
